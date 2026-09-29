@@ -1,0 +1,21 @@
+{
+  "name": "tapp-mobile-order-backend",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "concurrently -k -n checkout,api -c magenta,blue \"npm:dev:checkout\" \"npm:dev:api\"",
+    "dev:checkout": "node mock-checkout/index.js",
+    "dev:api": "node --watch server.js",
+    "smoke": "node smoke.js"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
